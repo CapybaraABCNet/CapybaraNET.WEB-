@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEBC.OS</title>
+    <style>
+        body {
+            background: #000;
+            color: #0f0;
+            font-family: monospace;
+            padding: 20px;
+        }
+        #console {
+            border: 2px solid #0f0;
+            padding: 15px;
+            min-height: 300px;
+            white-space: pre-wrap;
+            overflow-y: auto;
+        }
+        #input {
+            background: transparent;
+            border: none;
+            color: #0f0;
+            font-family: inherit;
+            font-size: 16px;
+            outline: none;
+            width: 100%;
+        }
+        .prompt {
+            color: #0ff;
+        }
+    </style>
+</head>
+<body>
+    <a href="/">вернуться назад</a>
+    <pre id="console"></pre>
+    <span class="prompt">></span> <input type="text" id="input" autofocus>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.min.js"></script>
+
+    <script>
+        const CONSOLE = document.getElementById('console');
+        const INPUT = document.getElementById('input');
+
+        let GameStart = 'start';
+
+        function log(message) {
+            CONSOLE.textContent += `\n> ${message}`;
+            CONSOLE.scrollTop = CONSOLE.scrollHeight;
+        }
+
+        function obr(event) {
+            if (event.key === 'Enter') {
+                const InputP = INPUT.value.trim();
+                INPUT.value = '';
+                Game(InputP);
+            }
+        }
+
+        function Game(command) {
+            switch (command) {
+                case "2":
+                    NacGame();
+                    break;
+                case "1":
+                    
+                    log("Выберите комманду (пишите буквами)");
+                    log("1.калькулятор");
+                    log("2.координаты X Y");
+                    log("3.степень");
+                    break;
+                case "калькулятор":
+                    GameStart = "mat";
+                    log("Введите пример");
+                    break;
+                case "координаты X Y":
+                    GameStart = 'ma';
+                    log("Введите GO");
+                    break;
+                case "степень":
+                    GameStart = "m";
+                    log("Введите Go!");
+                    break;
+                default:
+                    if (GameStart === 'mat') {
+                        calculator(command);
+                    } else if (GameStart === "ma") {
+                        XY(command);
+                    } else if (GameStart === "m") {
+                        stepen(command);
+                    } else if (GameStart === "1") {
+                        function sleep(ms) {
+                        return new Promise(resolve => setTimeout(resolve, ms));
+                    }
+                    break;
+                }
+            }
+        }
+
+        function calculator(expression) {
+            try {
+                const result = math.evaluate(expression);
+                log(`Результат: ${result}`);
+                
+            }
+            catch (error) {
+                log("Error");
+            }
+        }
+
+        function XY() {
+            try {
+                let xminus = parseFloat(prompt("Введи -X:"));
+                let x = parseFloat(prompt("Введи X:"));
+                let yminus = parseFloat(prompt("Введи -Y:"));
+                let y = parseFloat(prompt("Введи Y:"));
+                xminus = -xminus;
+                yminus = -yminus;
+                let P = (x + xminus + y + yminus) * 2;
+                let S = (xminus + x) * (yminus + y);
+                log(`P = ${P}`);
+                log(`S = ${S}`);
+            } catch (error) {
+                log("Error");
+            }
+        }
+
+        function stepen() {
+            try {
+                let t = 1;
+                let Chislostepenn = parseFloat(prompt("Введите число которое должно быть в степени"));
+                let stepenn = parseFloat(prompt("Введите степень"));
+                for (let ii = 0; ii < stepenn; ii++) {
+                    t *= Chislostepenn;
+                }
+                log(`${t}`);
+            } catch (error) {
+                log("Error");
+            }
+        }
+
+        function GuessGame() {
+            
+            
+        }
+
+        INPUT.addEventListener('keydown', obr);
+        NacGame();
+
+        function NacGame() {
+            GameStart = 'start';
+            CONSOLE.textContent = '';
+            log("Hello! Это WEBC.OS, выберите команду (команду пишите цифрой):");
+            log("");
+            log("1.Математика");
+            log("2.Вернуться назад");
+        }
+    </script>
+</body>
+</html>

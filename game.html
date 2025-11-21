@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>CapybaraNET.WEB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+}
+header {
+    background: linear-gradient(135deg, #00aeff, #00f2ff);
+    
+    color: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+.logo1 {
+    
+    display: flex;
+    text-align: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 300px;
+    margin-right: 20px;
+}
+.logo1 img {
+    border-radius: 50%;
+    width: 150px;
+    margin-right: 20px;
+}
+.g {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-left: 20px;
+}
+.container1 {
+    min-height: 100%;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            margin: 20px auto; 
+        }
+        .m {
+            color: rgb(255, 255, 255);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: appear 2s forwards;
+            margin-bottom: 20px;
+        }
+        .w {
+            color: rgb(0, 0, 0);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: appear 2s forwards;
+            margin-bottom: 20px;
+        }
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+.g::after {
+  width: 0;
+  transition: 0.3s;
+}
+.g:hover:after {
+  width: 100%;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: white;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+button {
+    background-color: aqua;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.ad-container {
+    width: 300px; 
+    float: right; /* Плавающий элемент вправо */
+    padding: 20px;
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.ad-container1 {
+    width: 300px; 
+    margin-left: 20px;
+    padding: 20px;
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.img {
+            width: 250px; 
+            border-radius: 15px; 
+            opacity: 0;
+            animation: imageFadeIn 2s forwards;
+            display: block; 
+            margin: 20px auto; 
+        }
+
+        @keyframes imageFadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+.container2 {
+    min-height: 100%;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto; 
+    float: right;
+}
+.im {
+    margin-left: 20px;
+     width: 250px; 
+            border-radius: 15px; 
+            opacity: 0;
+            animation: imageFadeIn 2s forwards;
+            display: block; 
+            margin: 20px auto; 
+
+}
+
+.text-center {
+    text-align: center;
+}
+.h1 {
+            color: #000000;
+            margin-bottom: 10px;
+        }
+#console {
+            border: 2px solid #0f0;
+            padding: 15px;
+            min-height: 300px;
+            white-space: pre-wrap;
+            overflow-y: auto;
+        }
+        #input {
+            background: transparent;
+            border: none;
+            color: #0f0;
+            font-family: inherit;
+            font-size: 16px;
+            outline: none;
+            width: 100%;
+        }
+        .prompt {
+            color: #0ff;
+        }
+    #consol {
+            border: 2px solid #0f0;
+            padding: 15px;
+            min-height: 300px;
+            white-space: pre-wrap;
+            overflow-y: auto;
+        }
+        #inpu {
+            background: transparent;
+            border: none;
+            color: #0f0;
+            font-family: inherit;
+            font-size: 16px;
+            outline: none;
+            width: 100%;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+        }
+        .results {
+            margin-top: 20px;
+        }
+        .result-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer; /* Указатель при наведении */
+        }
+        a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: #265301;
+}
+
+a:visited {
+  color: #437a16;
+}
+
+a:focus {
+  border-bottom: 1px solid;
+  background: #bae498;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+  background: #cdfeaa;
+}
+
+a:active {
+  background: #265301;
+  color: #cdfeaa;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo1">
+            <img src="https://capybaraabcnet.github.io/Tamagochi-Capybara/photo_5228854488398422188_c.jpg" class="logo1"> 
+            <h1 class="m">CapybaraNET.WEB</h1>
+        </div>
+    </header>
+
+    <h1 class="w">Проекты и игры</h1>
+    <p class="w">Тут вы можете увидеть мои игры и проекты</p>
+    <img src="https://i.ytimg.com/vi/P0xRlAjeo9w/maxresdefault.jpg" class="img">
+    
+    
+    <div class="container1">
+        <h2 class="w">Навигация по сайту</h2>
+        <a href="/">Главная страница</a>
+        <a href="/m">Статьи</a>
+        <a href="/game">Проекты и игры</a>
+        <a href="/prikol">Разные приколюхи</a>
+        <a href="/fortune">ОС</a>
+        <a href="/abc">Про создателя сайта</a>
+    </div>   
+    
+    <div class="container1">
+        <h2 class="w">Навигация по странице</h2>
+        <a href="#game">Все игры и проекты</a>
+        <a href="#thegame">Дополнительные игры</a>
+        <a href="#bott">CapybaraABC.NET bot (Бот)</a>
+    </div>
+
+    <div class="container1">
+        <h2 class="w" id="game">Сборники сайтов</h2>
+        <div>
+            <a href="https://capybaraabcnet.github.io/The-Capybara-Show/" target="_blank">The Capybara Show|</a>
+            <a href=" https://capybaraabcnet.github.io/Sity-Good-Capybara-WEB-/" target="_blank"> Sity-Good-Capybara-WEB</a>
+        </div>
+        <h2 class="w">Игры</h2>
+        <div>
+            <a href="https://capybaraabcnet.github.io/CapybaraLife---1.0/" target="_blank">CapybaraLife|</a>
+            <a href="https://capybaraabcnet.github.io/-Cool-car-1.0/ " target="_blank">Cool-car-game|</a>
+            <a href="https://capybaraabcnet.github.io/IT-School/" target="_blank">IT School|</a>
+            <a href="https://capybaraabcnet.github.io/MathCapybaraGame/" target="_blank">MathCapybaraGame|</a>
+            <a href="https://capybaraabcnet.github.io/Create-Websites-inc./" target="_blank">Create-Websites-inc.|</a>
+            <a href="https://capybaraabcnet.github.io/Sport-Game/" target="_blank">Sport-Game|</a>
+            <a href="https://capybaraabcnet.github.io/-apybara-Games/" target="_blank">Capybara-Games|</a>
+            <a href="https://capybaraabcnet.github.io/TheWorldClick---1.1/" target="_blank">TheWorldClick|</a>
+            <a href="https://capybaraabcnet.github.io/Tamagochi-Capybara/" target="_blank">Tamagochi-Capybara|</a>
+            <a href="https://capybaraabcnet.github.io/CapybaraPassworld/" target="_blank">CapybaraPassworld|</a>
+        </div>
+
+        <h2 class="w">Сайты</h2>
+        <div>
+            <a href="https://capybaraabcnet.github.io/CapybaraNET---2.3/" target="_blank">CapybaraNET|</a>
+            <a href="https://capybaraabcnet.github.io/CapybaraHackProg-City---1.2/" target="_blank">CapybaraHackProgCity|</a>
+            <a href="https://capybaraabcnet.github.io/TGP-ABC/" target="_blank">TGP-ABC|</a>
+            <a href="https://capybaraabcnet.github.io/Capybara-City---1.2/" target="_blank">Capybara-City|</a>
+            <a href="https://capybaraabcnet.github.io/LoveProg/" target="_blank">LoveProg|</a>
+            <a href="https://capybaraabcnet.github.io/CyberSiteWorld---1.2/" target="_blank">CyberSiteWorld|</a>
+            <a href="https://capybaraabcnet.github.io/TacsNET---1.3/" target="_blank">TacsNET|</a>
+            <a href="https://capybaraabcnet.github.io/The-beautiful-Pomeranian-1.5/" target="_blank">The-beautiful-Pomeranian|</a>
+            <a href="https://capybaraabcnet.github.io/WebCorgi-1.0/" target="_blank">WebCorgi|</a>
+            <a href="https://capybaraabcnet.github.io/CapybaraShop/" target="_blank">CapybaraShop|</a>
+            <a href="https://capybaraabcnet.github.io/AudioWorld/" target="_blank">AudioWorld|</a>
+            <a href="https://capybaraabcnet.github.io/The-Animals/" target="_blank">The-Animals|</a>
+            <a href="https://capybaraabcnet.github.io/CapybaraOS-web/" target="_blank">CapybaraABC.OS|</a>
+            <a href="https://capybaraabcnet.github.io/virtual-keyboard-3/" target="_blank">virtual-keyboard|</a>
+            <a href="https://capybaraabcnet.github.io/CapybaraABC.NET-Blog/" target="_blank">CapybaraABC.NET-Blog|</a>
+            <a href="https://capybaraabcnet.github.io/TheMath/" target="_blank">TheMath|</a>
+            <a href="loquacious-malasada-ad2dd4.netlify.app" target="_blank">Love Animals</a>
+        </div>
+
+        <h2 class="w">Боты</h2>
+        <div>
+            <a href="https://capybaraabcnet.github.io/CapybaraChat---by-CapybaraABC.NET/" target="_blank">CapybaraChat|</a>
+            <a href="https://capybaraabcnet.github.io/Newton_bot/" target="_blank">Newton_bot|</a>
+            <a href="https://capybaraabcnet.github.io/Capybara-Robot/" target="_blank">Capybara-Robot</a>
+            <a href="https://capybaraabcnet.github.io/CapybaraSmart/" target="_blank">CapybaraSmart</a>
+        </div>
+
+    </div>
+
+    <h2 class="w" id="thegame">Дополнительные игры</h2>
+    <h3 class="w">The Business World (Мир бизнеса)</h3>
+    <div class="container1">
+        <h3 class="h1">The Business World</h3>
+        <h3 class="h1" id="money">250$</h3>
+        <h4 class="h1" id="h">Привет! Ты бизнесмен, и ты владеешь заводом, развивайся и зарабатывай деньги!</h4>
+        <p></p>
+        <div>
+            <button onclick="zavvod()">Улучшить завод (350$)</button>
+            <p></p>
+            <button onclick="newZavod()">Построить новый завод (600$)</button>
+        </div>
+        <div>
+            <p></p>
+            <button onclick="razZavod()">Развивать завод (500$)</button>
+            <p></p>
+            <button onclick="newWork()">Нанять нового рабочего (250$)</button>
+            <p></p>
+            <button onclick="workk()">Работать</button>
+        </div>
+        <div>
+            <p></p>
+            <button onclick="GameStartttt()">Начать игру</button>
+        </div>
+    </div>
+    
+    <h3 class="w">CapybaraNET.WEB Quiz (Викторина CapybaraNET.WEB)</h3>
+    <div class="container1">
+        <h3 class="h1">CapybaraNET.WEB Quiz</h3>
+        <h3 class="w">🧠</h3>
+        <div id="console"></div>
+        <input type="text" id="input" placeholder="Введите ответ...">
+    </div>
+
+    
+    <div class="container1">
+        <h2 class="w">The English Game</h2>
+        <p class="w">Крутая игра</p>
+        <h3 class="w">📕</h3>
+        <h4 class="w">Это крутая игра где ты должен обучаться английскому, Чтобы ссыграть в игру нажмите <a href="https://capybaraabcnet.github.io/The-Capybara-English-Game/" target="_blank">сюда</a></h4>
+    </div>
+
+    <div class="container1">
+        <h2 class="w">MyGame</h2>
+        <p class="w">Крутая игра</p>
+        <h3>Крутая игра где ты пишешь имена своих персонажей и смотришь их истории, чтобы сыграть нажмите <a href="https://capybaraabcnet.github.io/MyGame/" target="_blank">Сюда</a></h3>
+    </div>
+
+    <div class="container1">
+        <h2 class="w">Battle-Game</h2>
+        <p class="w">Крутая игра</p>
+        <h3>Крутая игра где ты будешь сражаться с разными монстрами, чтобы играть перейдите <a href="https://capybaraabcnet.github.io/Battle-Game/" target="_blank">сюда</a></h3>
+    </div>
+
+    <div class="container1">
+        <h2 class="w">ClickTheClick</h2>
+        <p class="w">Крутая игра</p>
+        <h3>Крутой кликер, чтобы посмотреть его перейдите <a href="https://capybaraabcnet.github.io/ClickTheClick/" target="_blank">сюда</a></h3>
+    </div>
+
+    <div class="container1">
+        <h2 class="w">Путешествия по странам</h2>
+        <h3>🌏</h3>
+        <p class="w">Это игра Путешествия по странам, тут вы можете писать какие страны хотите посетить и мы вам расскажим об этой стране</p>
+        <div>
+            <p class="w">Список стран которые тут есть:</p>
+            <ul id="country" class="w"></ul>
+
+        </div>
+        <p class="w">Напишите одну страну из этих и вы узнаете про неё</p>
+        <pre id="cnsl"></pre>
+        <span class="prompt">></span> <input type="text" id="inp" autofocus>
+        
+
+    </div>
+
+    <div class="container1">
+        <h2 class="w">Кто вор?</h2>
+        <p class="w">В этой игре вы должны угадать кто же был вором</p>
+        <h3 class="w">👮</h3>
+        <div id="cons"></div>
+        <input type="text" id="inpttt" placeholder="Введите ответ...">
+       
+    </div>
+    
+    <div class="container1">
+        <h2 class="w" id="bott">CapybaraABC.NET Bot</h2>
+        <h3>Привет! CapybaraABC.NET bot - Это крутой голосовой бот, чтобы посмотреть как пользоваться им читайте</h3>
+        <a href="/i" target="_blank">Здесь</a>
+        <button id="start-button">Начать разговор</button>
+        <div id="output"></div>
+    </div>
+
+    
+
+
+    <script>
+        let money = 250;
+        let h = "";
+        let mm = false;
+        var maxx = false; 
+        var max = 5;
+        var click = 0;
+        let c = false;
+        var www = 0;
+        var ww = 0;
+        let ff = false;
+        var w = 0;
+        let vfv = false;
+        var wwww = 0;
+        let GameStarttt = false
+
+        function GameStartttt() {
+            GameStarttt = true;
+            alert("Игра началась!");
+            setInterval(() => {
+                money = Math.max(0, money + 1);
+                update();
+            
+            }, 1000);
+        }
+
+        function update() {
+            document.getElementById('money').textContent = money;
+            document.getElementById('h').textContent = h;
+        }
+
+        function zavvod() {
+            if (money >= 350) {
+                money -= 350;
+                h = "- 350$, у вас теперь обновился завод";
+                document.getElementById('h').textContent = h;
+                document.getElementById('money').textContent = money;
+                mm = true;
+                ww += 1;
+                hff();
+            }
+            else {
+                h = "вам не хватило денег(";
+                document.getElementById("h").textContent = h;
+            }
+        }
+
+        function hff() {
+            if (mm) {
+                setInterval(() => {
+                    money = Math.max(0, money + 1 * ww);
+                    update();
+                }, 3000);
+            }
+        }
+
+        function newZavod() {
+            if (money >= 600) {
+                money -= 600;
+                h = "-600$, новый завод построен";
+                c = true;
+                www += 1;
+                hdh();
+                
+            }
+            else {
+                h = "Вам не хватает денег(";
+                update();
+            }
+            update();
+        }
+
+        function hdh() {
+            if (c) {
+                setInterval(() => {
+                    money = Math.max(0, money + 2 * www);
+                    update();
+                }, 1000);
+            }
+        }
+
+        function razZavod() {
+            if (money >= 500) {
+                money -= 500;
+                h = "-500$, вы улучшили завод завод";
+                ff = true;
+                w += 1;
+                ggfd();
+            }
+            else {
+                h = "Вам не хватает денег(";
+                update();
+            }
+            update();
+        }
+
+        function ggfd() {
+            if (ff) {
+                setInterval(() => {
+                    money = Math.max(0, money + 1 * w);
+                    update();
+                }, 3000);
+            }
+        }
+
+        function newWork() {
+            if (money >= 250) {
+                money -= 250;
+                h = "-250$, вы наняли рабочего";
+                vfv = true;
+                wwww += 1;
+                uy();
+            }
+            else {
+                h = "Вам не хватает денег(";
+                update();
+            }
+            update();
+        }
+
+        function uy() {
+            if (vfv) {
+                setInterval(() => {
+                    money = Math.max(0, money + 1 * wwww);
+                    update();
+                }, 3000);
+            }
+        }
+
+        function workk() {
+            if (maxx) {
+                h = "Вы можете работать только через 15 секунд!";
+                update();
+                return;
+            }
+            if (click < max) {
+                money += 5;
+                h = "+5$";
+                click++;
+                update();
+
+                if (click === max) {
+                    startFal();
+                }
+            }
+            else {
+                h = "Вы исчерпали все попытки!";
+                update();
+            }
+            update();
+
+        }
+        function startFal() {
+            click = 0;
+            maxx = true;
+            update();
+            setTimeout(function() {
+                maxx = false;
+                click = 0;
+                h = "Вы можете теперь работать";
+                update();
+            }, 15000);
+        }
+
+
+        
+
+
+        const consoleEl = document.getElementById('console');
+        const inputEl = document.getElementById('input');
+        
+        let quizStart = 'start';
+
+        function log(message) {
+            consoleEl.textContent += `\n> ${message}`; 
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+        }
+        function handleInput(event) {
+            if (event.key === 'Enter') {
+                const userInput = inputEl.value.trim();
+                inputEl.value = '';
+                processCommand(userInput);
+            }
+        }
+        
+        function processCommand(command) {
+            switch (quizStart) {
+                case "start":
+                    if (command === "Ватикан") {
+                        log("Это правильный ответ! Теперь второй вопрос: Какой самый высокий водопад в мире?");
+                        log("1.Анхель");
+                        log('2.Нил');
+                        log("3.Балкал");
+                        log("4.Саркырама");
+                        quizStart = 'vodopad'; 
+                    } else if (command === "Лихтенштейн") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else if (command === "Монако") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else if (command === "Канада") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else {
+                        log("Вы видимо не правильно написали, напишите ещё раз");
+                    }
+                    break;
+
+                case "vodopad":
+                    if (command === "Анхель") {
+                        log("Правильно! Сколько будет 55*8?")
+                        quizStart = "55";
+                    } 
+                    else if (command === "Нил") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else if (command === "Балкал") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else if (command === "Саркырама") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else {
+                        log("Вы видимо не правильно написали, напишите ещё раз");
+                    }
+                    break;
+                case "55":
+                    if (command === "440") {
+                        log("Это правильный ответ, новый вопрос:Какая планета находится ближе всего к Солнцу?");
+                        log("1.Земля");
+                        log("2.Сатурн");
+                        log("3.Венера");
+                        log("4.Меркурий");
+                        quizStart = "planeta";
+                    }
+                    else {
+                        log("Видимо вы не правильно написали, попробуйте ещё");
+                    }
+                    break;
+                case "planeta":
+                    if (command === "Меркурий") {
+                        log("Правильно! В какой стране находится гора Эверест?");
+                        log("1.Россия");
+                        log("2.Непал");
+                        log("3.Индия");
+                        log("4.Египет");
+                        quizStart = "Ne";
+                    }
+                    else if (command === "Венера") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else if (command === "Сатурн") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else if (command === "Земля") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else {
+                        log("Видимо вы не правильно написали, попробуйте ещё");
+                    }
+                    break;
+                case "Ne":
+                    if (command === "Непал") {
+                        log("Правильно!  Кто был первым президентом США?");
+                        log("1.Вашингтон");
+                        log("2.Трамп");
+                        log("3.Байден");
+                        log("4.Джордж Буш");
+                        quizStart = "USA";
+                    }
+                    else if (command === "Россия") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else if (command === "Индия") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else if (command === "Египет") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else {
+                        log("Видимо вы не правильно написали, попробуйте ещё");
+                    }
+                    break;
+                case "USA":
+                    if (command === "Вашингтон") {
+                        log("Правильно! В каком году распался Советский Союз?");
+                        log('1.1996');
+                        log('2.1990');
+                        log('3.1991');
+                        log("4.1995");
+                        quizStart = "1991";
+
+                    }
+                    else if (command === "Трамп") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else if (command === "Байден") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else if (command === "Джордж Буш") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else {
+                        log("Видимо вы не правильно написали, попробуйте ещё");
+                    }
+                    break;
+                case "1991":
+                    if (command === "1991") {
+                        log("Правильно! Кто написал картину 'Мона Лиза'?");
+                        log("1.Рафаэль");
+                        log("2.Леонардо Да Винчи");
+                        log('3.Микеланджело');
+                        log("4.Шишкин");
+                        quizStart = "raf";
+                    }
+                    else if (command === "1990") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else if (command === "1995") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else if (command === "1996") {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else {
+                        log("Видимо вы не правильно написали, попробуйте ещё");
+                    }
+                    break;
+                case "raf":
+                    if (command === "Леонардо Да Винчи") {
+                        log("Правильно! Какое имя у создателя Диснея?");
+                        log("1.Джимми");
+                        log("2.Майк");
+                        log("3.Джесси");
+                        log("4.Уолт");
+                        quizStart = "wolt";
+                    }
+                    else if (["Рафаэль", "Микеланджело", "Шишкин"].includes(command)) {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else {
+                        log("Видимо вы не правильно написали, попробуйте ещё");
+                    }
+                    break;
+                case "wolt":
+                    if (command === "Уолт") {
+                        log("Правильно! Игра Закончена");
+                    }
+                    else if (["Майк", "Джесси", "Джимми"].includes(command)) {
+                        restartGame();
+                        log("Game over! Это неправильный ответ. Игра перезапустилась, отвечай на этот вопрос");
+                    }
+                    else {
+                        log("Видимо вы не правильно написали, попробуйте ещё");
+                    }
+                    break;
+                case undefined:
+                    log("Вы видимо не правильно написали, напишите ещё раз");
+            }
+        }
+        
+        inputEl.addEventListener('keydown', handleInput);
+        restartGame();
+
+        function restartGame() {
+            quizStart = 'start';
+            consoleEl.textContent = '';
+            log("Приветствуем вас в викторине от CapybaraNET.WEB, и мы начинаем");
+            log("Самая маленькая страна это:");
+            log("1. Лихтенштейн");
+            log("2. Ватикан");
+            log("3. Монако");
+            log("4. Канада");
+        }
+
+        const outputT = document.getElementById('output');
+    const startB = document.getElementById('start-button');
+    
+    if (!startB || !outputT) {
+        alert("Некорректная разметка страницы!");
+    }
+
+    if (!('webkitSpeechRecognition' in window)) {
+        outputT.innerHTML = "Ваш браузер не поддерживает webkitSpeechRecognition!";
+    } else {
+        const razp = new webkitSpeechRecognition();
+        razp.continuous = false;
+        razp.interimResults = false;
+        razp.lang = 'ru-RU';
+
+        razp.onstart = function () {
+            outputT.innerHTML = "Говорите...";
+        };
+
+        razp.onresult = function (event) {
+            const transcript = event.results[0][0].transcript;
+            outputT.innerHTML = "Вы сказали: " + transcript;
+            respond(transcript);
+        };
+
+        razp.onerror = function (event) {
+            outputT.innerHTML = "Ошибка распознавания: " + event.error;
+        };
+
+        razp.onend = function () {
+            outputT.innerHTML = "Слушание завершено.";
+        };
+
+        startB.onclick = function () {
+            razp.start();
+        };
+    }
+
+    let hfd = false;
+
+    function respond(transcript) {
+        let response = '';
+        if (transcript.includes('привет')) {
+            response = "Привет! Я Капибара АБЦ точка НЕТ Бот! С чем я могу помочь?";
+        }
+        else if (transcript.includes('Привет')) {
+            response = "Привет! Я Капибара АБЦ точка НЕТ Бот! С чем я могу помочь?";
+        }
+        else if (transcript.includes('Как дела?')) {
+            response = "Всё хорошо, а у тебя?";
+        }
+        else if (transcript.includes('как дела')) {
+            response = "Всё хорошо, а у тебя?";
+        }
+        else if (transcript.includes('Кто такие капибары?')) {
+            response = "Капибара (водосвинка) — полуводное травоядное млекопитающее из подсемейства водосвинковых. Латинское название — Hydrochoerus hydrochaeris — переводится как водяная свинья. Они красивые животные, чтобы побольше узнать о них посмотрите наш сайт КапибараНЕт (ссылка на вверху)";
+
+        }
+        else if (transcript.includes('кто такие капибары')) {
+            response = "Капибара (водосвинка) — полуводное травоядное млекопитающее из подсемейства водосвинковых. Латинское название — Hydrochoerus hydrochaeris — переводится как водяная свинья. Они красивые животные, чтобы побольше узнать о них посмотрите наш сайт КапибараНЕт (ссылка на вверху)";
+
+        }
+        else if (transcript.includes('Кто такой Пушкин?')) {
+            response = "Александр Пушкин — центральная фигура в истории русскоязычной литературы.";
+        }
+        else if (transcript.includes('Кто такой пушкин?')) {
+            response = "Александр Пушкин — центральная фигура в истории русскоязычной литературы.";
+        }
+        else if (transcript.includes('кто такой Пушкин')) {
+            response = "Александр Пушкин — центральная фигура в истории русскоязычной литературы.";
+        }
+        else if (transcript.includes('кто такой пушкин')) {
+            response = "Александр Пушкин — центральная фигура в истории русскоязычной литературы.";
+        }
+        else if (transcript.includes('Пока')) {
+            response = "Пока!";
+        }
+        else if (transcript.includes('пока')) {
+            response = "пока!";
+        }
+        else if (transcript.includes('Что ты умеешь делать?')) {
+            response = "Я умею отвечать на вопросы, задай мне вопрос из страницы 'Как пользоваться ботом'";
+        }
+        else if (transcript.includes('что ты умеешь делать')) {
+            response = "Я умею отвечать на вопросы, задай мне вопрос из страницы 'Как пользоваться ботом'";
+        }
+        else if (transcript.includes('расскажи анекдот')) {
+            response = "Колобок повесился";
+        }
+        else if (transcript.includes('Расскажи анекдот')) {
+            response = "Колобок повесился";
+        }
+        else if (transcript.includes('Какое сейчас время?')) {
+            response = `Текущее время: ${kazanskoyeTime}`;
+        }
+        else if (transcript.includes('какое сейчас время')) {
+            response = `Текущее время: ${kazanskoyeTime}`;
+        }
+        
+        else if (transcript.includes('Помоги мне расслабиться')) {
+            response = `Расслабление — это важная часть поддержания психического и физического здоровья. Вот несколько способов, которые могут помочь вам расслабиться:
+
+1. Дыхательные упражнения: Попробуйте глубокое дыхание. Вдохните медленно через нос на счет 4, задержите дыхание на 4 секунды, затем выдохните через рот на счет 4. Повторите несколько раз.
+
+2. Медитация: Найдите тихое место, закройте глаза и сосредоточьтесь на своем дыхании или используйте приложения для медитации, такие как Headspace или Calm.
+
+3. Прогулка на свежем воздухе: Прогулка по парку или в лесу может помочь очистить разум и снизить уровень стресса.
+
+4. Слушайте музыку: Включите любимую расслабляющую музыку или звуки природы.
+
+5. Чтение: Погрузитесь в хорошую книгу или статью, чтобы отвлечься от повседневных забот.
+
+6. Занятия спортом: Физическая активность, такая как йога, плавание или просто растяжка, может помочь снять напряжение.
+
+7. Творчество: Рисование, письмо, рукоделие или любое другое творческое занятие могут помочь отвлечься и расслабиться.
+
+8. Теплая ванна: Принятие теплой ванны с эфирными маслами или пеной может помочь расслабить мышцы и успокоить ум.
+
+9. Практика благодарности: Запишите три вещи, за которые вы благодарны. Это может помочь изменить ваше восприятие и улучшить настроение.
+
+10. Сон: Убедитесь, что вы достаточно спите. Качественный сон — ключ к хорошему самочувствию.
+
+Попробуйте разные методы и найдите то, что работает именно для вас!`;
+        }
+        else if (transcript.includes('помоги мне расслабиться')) {
+            response = `Расслабление — это важная часть поддержания психического и физического здоровья. Вот несколько способов, которые могут помочь вам расслабиться:
+
+1. Дыхательные упражнения: Попробуйте глубокое дыхание. Вдохните медленно через нос на счет 4, задержите дыхание на 4 секунды, затем выдохните через рот на счет 4. Повторите несколько раз.
+
+2. Медитация: Найдите тихое место, закройте глаза и сосредоточьтесь на своем дыхании или используйте приложения для медитации, такие как Headspace или Calm.
+
+3. Прогулка на свежем воздухе: Прогулка по парку или в лесу может помочь очистить разум и снизить уровень стресса.
+
+4. Слушайте музыку: Включите любимую расслабляющую музыку или звуки природы.
+
+5. Чтение: Погрузитесь в хорошую книгу или статью, чтобы отвлечься от повседневных забот.
+
+6. Занятия спортом: Физическая активность, такая как йога, плавание или просто растяжка, может помочь снять напряжение.
+
+7. Творчество: Рисование, письмо, рукоделие или любое другое творческое занятие могут помочь отвлечься и расслабиться.
+
+8. Теплая ванна: Принятие теплой ванны с эфирными маслами или пеной может помочь расслабить мышцы и успокоить ум.
+
+9. Практика благодарности: Запишите три вещи, за которые вы благодарны. Это может помочь изменить ваше восприятие и улучшить настроение.
+
+10. Сон: Убедитесь, что вы достаточно спите. Качественный сон — ключ к хорошему самочувствию.
+
+Попробуйте разные методы и найдите то, что работает именно для вас!`;
+        }
+    
+    else if (transcript.includes('Расскажи что-то интересное.')) {
+        response = "OK 1. Около 70% поверхности Земли покрыто водой, но только 2.5% из нее — пресная. 2. Слоны — единственные животные, которые не могут прыгать. 3. Первый электронный компьютер ENIAC весил около 30 тонн и занимал площадь в 167 квадратных метров. 4. В мире существует более 7000 языков, но около 90% людей говорят на менее чем 100 из них.";
+    }
+    else if (transcript.includes('расскажи что-то интересное.')) {
+        response = "OK 1. Около 70% поверхности Земли покрыто водой, но только 2.5% из нее — пресная. 2. Слоны — единственные животные, которые не могут прыгать. 3. Первый электронный компьютер ENIAC весил около 30 тонн и занимал площадь в 167 квадратных метров. 4. В мире существует более 7000 языков, но около 90% людей говорят на менее чем 100 из них.";
+    }
+    else if (transcript.includes('как провести время')) {
+        response = "Чтение книг, прогулка на свежем воздухе, занятия спортом, кулинарные эксперименты, просмотр фильмов, рисование, игры, изучение нового языка, посещение музеев, волонтерство.";
+    }
+    else if (transcript.includes('Как провести время')) {
+        response = "Чтение книг, прогулка на свежем воздухе, занятия спортом, кулинарные эксперименты, просмотр фильмов, рисование, игры, изучение нового языка, посещение музеев, волонтерство.";
+    }
+    else if (transcript.includes('в какие игры сыграть')) {
+        response = "Монополия, Диксит, Уно, Мафия, Among Us, Mario Kart, Фризби, Пейнтбол, Шахматы, Скрабл, Эскейп-румы, городские квесты, Импровизация, Сказочник.";
+    }
+    else if (transcript.includes('В какие игры сыграть?')) {
+        response = "Монополия, Диксит, Уно, Мафия, Among Us, Mario Kart, Фризби, Пейнтбол, Шахматы, Скрабл, Эскейп-румы, городские квесты, Импровизация, Сказочник.";
+    }
+    else if (transcript.includes('расскажи топ лайфаков в школе')) {
+        response = "1. Используйте цветные ручки для заметок; 2. Создайте расписание на неделю; 3. Учитесь с друзьями; 4. Скачайте приложения для заметок; 5. Практикуйте чтение по диагонали; 6. Используйте ассоциации для запоминания; 7. Создавайте карточки с вопросами; 8. Ведите здоровый образ жизни; 9. Делайте перерывы в учебе; 10. Задавайте вопросы учителям.";
+    }
+    else if (transcript.includes('Расскажи топ лайфаков в школе')) {
+        response = "1. Используйте цветные ручки для заметок; 2. Создайте расписание на неделю; 3. Учитесь с друзьями; 4. Скачайте приложения для заметок; 5. Практикуйте чтение по диагонали; 6. Используйте ассоциации для запоминания; 7. Создавайте карточки с вопросами; 8. Ведите здоровый образ жизни; 9. Делайте перерывы в учебе; 10. Задавайте вопросы учителям.";
+    }
+    else if (transcript.includes('скажи цитаты')) {
+        response = '1. "Не бойтесь делать шаги в неизвестность — именно там начинается ваше истинное развитие." 2. "Успех — это не конечная точка, а путь, который мы выбираем каждый день." 3. "Каждый день — это новая возможность стать лучше, чем вчера." 4. "Секрет успеха — это постоянство цели." 5. "Вы не можете изменить направление ветра, но можете настроить свои паруса." 6. "Трудности — это просто возможности в маске." 7. "Будьте тем изменением, которое хотите видеть в мире." 8. "Ваше время ограничено, не тратьте его, живя чужой жизнью."';
+    }
+    else if (transcript.includes('Скажи цитаты')) {
+        response = '1. "Не бойтесь делать шаги в неизвестность — именно там начинается ваше истинное развитие." 2. "Успех — это не конечная точка, а путь, который мы выбираем каждый день." 3. "Каждый день — это новая возможность стать лучше, чем вчера." 4. "Секрет успеха — это постоянство цели." 5. "Вы не можете изменить направление ветра, но можете настроить свои паруса." 6. "Трудности — это просто возможности в маске." 7. "Будьте тем изменением, которое хотите видеть в мире." 8. "Ваше время ограничено, не тратьте его, живя чужой жизнью."';
+    }
+    else if (transcript.includes('расскажи исторические факты')) {
+        response = "Древний Египет: Пирамиды Гизы — самые высокие структуры до 3,800 лет; Рим: акведуки до сих пор функционируют; Викинги: торговцы и мореплаватели; Французская революция (1789) — падение монархии; Гражданская война в США (1861-1865) — конфликт из-за рабства; Первая мировая война (1914-1918) — разрушительная война; Вторая мировая война (1939-1945) — самая масштабная война; Холодная война — противостояние США и СССР.";
+    }
+    else if (transcript.includes('Расскажи исторические факты')) {
+        response = "Древний Египет: Пирамиды Гизы — самые высокие структуры до 3,800 лет; Рим: акведуки до сих пор функционируют; Викинги: торговцы и мореплаватели; Французская революция (1789) — падение монархии; Гражданская война в США (1861-1865) — конфликт из-за рабства; Первая мировая война (1914-1918) — разрушительная война; Вторая мировая война (1939-1945) — самая масштабная война; Холодная война — противостояние США и СССР.";
+    }
+    else if (transcript.includes('расскажи интересное о животных')) {
+        response = "Слоны умные и имеют отличную память, осьминоги имеют три сердца и голубую кровь, пингвины не летают, но отлично плавают, кошки издают более 100 звуков, голубые киты — самые большие животные, летучие мыши используют эхолокацию, а фламинго получают розовый цвет от каротиноидов в пище.";
+    }
+    else if (transcript.includes('Расскажи интересное о животных')) {
+        response = "Слоны умные и имеют отличную память, осьминоги имеют три сердца и голубую кровь, пингвины не летают, но отлично плавают, кошки издают более 100 звуков, голубые киты — самые большие животные, летучие мыши используют эхолокацию, а фламинго получают розовый цвет от каротиноидов в пище.";
+    }
+    else if (transcript.includes('скажи что то на английском')) {
+        response = "this is the CapybaraABC.NET bot, a cool bot, I hope you like it, в переводе: это бот CapybaraChat, крутой бот, надеюсь вам понравится";
+    }
+    else if (transcript.includes('Скажи что то на английском')) {
+        response = "this is the CapybaraABC.NET bot, a cool bot, I hope you like it, в переводе: это бот CapybaraChat, крутой бот, надеюсь вам понравится";
+    }
+    else if (transcript.includes('расскажи про собак и капибар')) {
+        response = "Собаки — преданные и умные компаньоны человека, а капибары — миролюбивые и социальные грызуны, известные своей дружелюбной натурой и способностью ладить с другими животными.";
+    }
+    else if (transcript.includes('Расскажи про собак и капибар')) {
+        response = "Собаки — преданные и умные компаньоны человека, а капибары — миролюбивые и социальные грызуны, известные своей дружелюбной натурой и способностью ладить с другими животными.";
+    }
+    else if (transcript.includes('расскажи про успех')) {
+        response = "Успех — это достижение поставленных целей, которое приносит удовлетворение и радость.";
+    }
+    else if (transcript.includes('Расскажи про успех')) {
+        response = "Успех — это достижение поставленных целей, которое приносит удовлетворение и радость.";
+    }
+    else if (transcript.includes('расскажи про языки программирования')) {
+        response = "Языки программирования — это формальные системы, используемые для написания программ, которые управляют поведением компьютеров и выполняют различные задачи.";
+    }
+    else if (transcript.includes('Расскажи про языки программирования')) {
+        response = "Языки программирования — это формальные системы, используемые для написания программ, которые управляют поведением компьютеров и выполняют различные задачи.";
+    }
+
+
+        
+
+        else {
+            response = "Я не понял то что вы сказали, повторите ещё раз";
+
+        }
+
+        const utterance = new SpeechSynthesisUtterance(response);
+        window.speechSynthesis.speak(utterance);
+    }
+
+    const options = {
+        timeZone: 'Europe/Moscow',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    };
+
+    const kazanskoyeTime = new Intl.DateTimeFormat('ru-RU', options).format(new Date());
+
+    const spisockCountry = ["Россия", "США", "Китай", "Египет", "Турция", "Австралия", "Бразилия"];
+    const country = document.getElementById('country');
+
+    spisockCountry.forEach(spisockCountry => {
+        const li = document.createElement('li');
+        li.textContent = spisockCountry;
+        country.appendChild(li);
+    });
+
+    const cnsl = document.getElementById("cnsl");
+    const inp = document.getElementById("inp");
+
+    let SGQ = 'start';
+
+    function l(message) {
+        cnsl.textContent += `\n> ${message}`; 
+        cnsl.scrollTop = cnsl.scrollHeight;
+    }
+
+    function obr(event) {
+        if (event.key === 'Enter') {
+            const Inputt = inp.value.trim();
+            inp.value = '';
+            ZapyskGame(Inputt);
+        }
+    }
+
+    function ZapyskGame(command) {
+        switch (SGQ) { 
+            case "start":
+                if (command === "Россия") {
+                    l("Россия");
+                    l("Россия - это самая большая страна в мире, история России");
+                    l(" одна из самых интересных. В России примерно 1119 ");
+                    l("городов, 89 субъектов и примерно 146 228 655 человек.");
+                    l(" Столица России Москва, а раньше в РИ столица была");
+                    l(" Санкт-Петербургом, ну и также многое другое.");
+                } else if (command === "США") {
+                    l("США");
+                    l("США (USA) или же Соединёные Штаты Америки, находится в");
+                    l("Северной Америке. Столица США - Вашингтон, А экономический ");
+                    l("центр - Нью-Йорк, столица Вашингтон названа в честь первого");
+                    l(" президента США - Джорджа Вашингтона. Раньше на территории ");
+                    l("США бжили индейцы, но потом приехали колонизаторы и начали.");
+                    l("убивать их. А сейчас США считается экономическим центром");
+                    l(" всего мира.");
+                } else if (command === "Китай") {
+                    l("Китай");
+                    l("Китай — это страна с богатой историей и культурой. Она ");
+                    l("знаменита Великой Китайской стеной, традициями, такими как ");
+                    l("Китайский Новый год, и современной архитектурой в городах,");
+                    l("таких как Пекин и Шанхай. Китай также известен своим искуc-");
+                    l("ством и кухней, что делает его уникальным местом.");
+
+                } else if (command === "Египет") {
+                    l("Египет");
+                    l("Египет — страна древних пирамид, Сфинкса и Нила. Здесь ");
+                    l("можно насладиться яркими рынками и красивыми пляжами ");
+                    l("Красного моря. Это место, где история встречается");
+                    l("с природой.");
+                } else if (command === "Турция") {
+                    l("Турция");
+                    l("Турция — страна, где Восток встречается с Западом. ");
+                    l("Стамбул знаменит Собором Святой Софии и Голубой мечетью. ");
+                    l("Каппадокия известна своими скальными образованиями и ");
+                    l("воздушными шарами. Турецкая кухня предлагает множество");
+                    l("вкусных блюд, включая кебабы и баклаву.");
+                } else if (command === "Австралия") {
+                    l("Австралия");
+                    l("Австралия — уникальный континент с разнообразной природой ");
+                    l("и культурой. Здесь обитают уникальные животные, такие как ");
+                    l("кенгуру и коала. Главные города — Сидней и Мельбурн. Австралия");
+                    l(" славится спортом, особенно крикетом и регби, и имеет развитую ");
+                    l("экономику, основанную на сельском хозяйстве и горнодобывающей ");
+                    l("промышленности.");
+                } else if (command === "Бразилия") {
+                    l("Бразилия");
+                    l("Бразилия — это страна в Южной Америке, известная своей богатой");
+                    l("культурой и разнообразной природой. Столицей является Brasília, ");
+                    l("а крупнейшими городами — Рио-де-Жанейро и São Paulo. Бразилия");
+                    l(" знаменита карнавальными фестивалями, самбой и великолепными ");
+                    l('пляжами.'); 
+                } else {
+                    l("Вы видимо не правильно написали команду, поробуйте ещё раз");
+                }
+                break;
+            }
+    }
+    inp.addEventListener('keydown', obr); 
+
+    nachalo();
+
+    function nachalo() {
+        SGQ = 'start';
+        cnsl.textContent = '';
+        l('Привет! Введи тут страну из списка');
+    }
+
+    const cons = document.getElementById("cons");
+    const inpttt = document.getElementById("inpttt");
+
+    let StrtGm = 'start';
+
+    function le(message) {
+        cons.innerText += `\n> ${message}`;
+        cons.scrollTop = cons.scrollHeight;
+    }
+
+    function obrabrtk2(event) {
+        if (event.key === "Enter") {
+            const IIInput = inpttt.value.trim();   
+            inpttt.value = '';
+            TheRealStartGamme(IIInput);
+        }
+    }
+
+    function TheRealStartGamme(command) {
+        switch (StrtGm) {
+            case "start":
+                if (command === 'Аня') {
+                    le("Не правильно, вы провалили тест, Game Over!");
+                } else if (command === 'Боб') {
+                    le("Не правильно, вы провалили тест, Game Over!");
+                } else if (command === 'Катя') {
+                    StrtGm = 'Game2';
+                    le("Правильно! Вы прошли тест");
+                    le("В офисе пропали канцелярские принадлежности. Трое сотрудников: Дима, Лена и Саша. Дима говорит, что Лена всегда забирает вещи, Лена утверждает, что Саша забирает все для себя, а Саша говорит, что Дима сам забирает все. Кто вор?");
+                    le("Комманды: Дима, Лена, Саша");
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break;
+            case "Game2":
+                if (command === 'Дима') {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else if (command === 'Лена') {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else if (command === 'Саша') {
+                    StrtGm = 'Game3';
+                    le("Правильно! На школьной ярмарке пропали игрушки. Трое детей: Маша, Петя и Ваня. Маша утверждает, что Петя взял игрушки, Петя говорит, что это Ваня, а Ваня утверждает, что это Маша. Кто вор?");
+                    le("комманды: Маша, Петя, Ваня");
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break; 
+            case "Game3":
+                if (command === 'Ваня') {
+                    StrtGm = 'Game4';
+                    le("Правильно!");
+                    le("На кухне пропала посуда. Трое жильцов: Анна, Борис и Света. Анна говорит, что Борис всегда оставляет беспорядок, Борис обвиняет Свету в том, что она всё забирает, а Света утверждает, что Анна сама всё прячет. Кто вор?");
+                    le("комманды: Анна, Борис, Света");
+                } else if (command === 'Маша') {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else if (command === "Петя") {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break;
+            case "Game4":
+                if (command === 'Света') {
+                    StrtGm = 'Game5';
+                    le("Правильно!");
+                    le('В магазине пропали продукты. Трое покупателей: Коля, Тоня и Рома. Коля говорит, что Тоня взяла продукты, Тоня говорит, что Рома всё утащил, а Рома утверждает, что это Коля обманывает. Кто вор?');
+                    le('комманды: Коля, Тоня, Рома');
+                } else if (command === 'Борис') {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else if (command === 'Анна') {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break;
+            case 'Game5':
+                if (command === 'Коля') {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else if (command === 'Рома') {
+                    StrtGm = 'Game6';
+                    le("Правильно!");
+                    le('На спортивной площадке пропали мячи. Трое мальчиков: Тимур, Артем и Илья. Тимур говорит, что Артем всегда берёт мячи, Артем утверждает, что это Илья делает, а Илья говорит, что Тимур сам всё прячет. Кто вор?');
+                    le('комманды: Тимур, Артём, Илья');
+                } else if (command === 'Тоня') {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break;
+            case "Game6":
+                if (command === 'Тимур') {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else if (command === 'Артём') {
+                    StrtGm = 'Game7';
+                    le('Правильно!');
+                    le('В библиотеке пропали книги. Трое читателей: Света, Дима и Лена. Света говорит, что Дима взял книги, Дима утверждает, что Лена их забрала, а Лена говорит, что это Света обманывает. Кто вор?');
+                    le('комманды: Света, Дима, Лена');
+                } else if (command === 'Тоня') {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break;
+            case 'Game7':
+                if (command === 'Лена') {
+                    StrtGm = 'Game8';
+                    le('Правильно!');
+                    le('На даче пропали инструменты. Трое друзей: Олег, Катя и Вадим. Олег говорит, что Катя всегда берёт инструменты, Катя утверждает, что это Вадим делает, а Вадим говорит, что Олег сам всё прячет. Кто вор?');
+                    le('комманды: Олег, Катя2, Вадим');
+                } else if (command === 'Дима') {
+                    le("Не правильно, вас уволили, Game Over!"); 
+                } else if (command === 'Света') {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break;
+            case "Game8":
+                if (command === 'Катя2') {
+                    StrtGm = 'Game9';
+                    le('Правильно!');
+                    le('В парке пропали игрушки для детей. Трое родителей: Марина, Сергей и Анна. Марина говорит, что Сергей взял игрушки, Сергей утверждает, что это Анна сделала, а Анна говорит, что Марина сама всё забрала. Кто вор?');
+                    le('комманды: Марина, Сергей, Анна');
+                } else if (command === 'Олег') {
+                    le("Не правильно, вас уволили, Game Over!"); 
+                } else if (command === 'Вадим') {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break;
+            case "Game9":
+                if (command === 'Марина') {
+                    le("Не правильно, вас уволили, Game Over!"); 
+                } else if (command === 'Сергей') {
+                    StrtGm = 'Game10';
+                    le('Правильно!');
+                    le('На концерте пропали билеты. Трое друзей: Игорь, Настя и Паша. Игорь говорит, что Настя их потеряла, Настя утверждает, что Паша их забрал, а Паша говорит, что Игорь сам всё утаил. Кто вор?');
+                    le('Комманды: Игорь, Настя, Паша');
+                } else if (command === 'Анна') {
+                    le("Не правильно, вас уволили, Game Over!");
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break;
+            case 'Game10':
+                if (command === 'Игорь') {
+                    le("Не правильно, вас уволили, Game Over!"); 
+                } else if (command === 'Настя') {
+                    StrtGm = 'Game11';
+                    le('Правильно!');
+                    le('В магазине одежды пропали вещи. Трое покупателей: Лена, Вика и Артем. Лена говорит, что Вика взяла куртку, Вика утверждает, что это Артем сделал, а Артем говорит, что Лена сама всё прячет. Кто вор?');
+                    le('комманды: Лена, Вика, Артем2');
+                } else if (command === 'Паша') {
+                    le("Не правильно, вас уволили, Game Over!"); 
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break;
+            case 'Game11':
+                if (command === 'Артём2') {
+                    StrtGm = 'Game12';
+                    le('Правильно!');
+                    le('На выставке пропали картины. Трое художников: Алексей, Ольга и Роман. Алексей говорит, что Ольга забрала свои работы, Ольга утверждает, что Роман всё утаил, а Роман говорит, что Алексей сам всё прятал. Кто вор?');
+                    le('комманды: Алексей, Ольга, Роман');
+                } else if (command === 'Вика') {
+                    le("Не правильно, вас уволили, Game Over!"); 
+                } else if (command === 'Лена') {
+                    le("Не правильно, вас уволили, Game Over!"); 
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break;
+            case 'Game12':
+                if (command === 'Ольга') {
+                    StrtGm = 'Game13';
+                    le('Правильно!');
+                    le('В школе пропали Телефоны. Трое учеников: Катя, Миша и Даша. Катя говорит, что Миша всегда брал её телефон, Миша утверждает, что это Даша делает, а Даша говорит, что Катя сама всё утаивает. Кто вор?');
+                    le('комманды: Катя3, Миша, Даша');
+                } else if (command === 'Роман') {
+                    le("Не правильно, вас уволили, Game Over!"); 
+                } else if (command === 'Алексей') {
+                    le("Не правильно, вас уволили, Game Over!"); 
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break;
+            case 'Game13':
+                if (command === 'Миша') {
+                    StrtGm = 'Game14';
+                    le('Правильно!');
+                    le('You Win! Вас повысили, игра окончена.');
+                } else if (command === 'Даша') {
+                    le("Не правильно, вас уволили, Game Over!"); 
+                } else if (command === 'Катя3') {
+                    le("Не правильно, вас уволили, Game Over!"); 
+                } else {
+                    le("Вы видимо не правильно ввели комманду, попробуйте ещё раз");
+                }
+                break;
+        }
+    }
+
+    inpttt.addEventListener('keydown', obrabrtk2);
+    nachalo2();
+
+    function nachalo2() {
+        StrtGm = 'start';
+        cons.textContent = '';
+        le("Привет! Ты полицейский, и тыт должен узнать кто вор");
+        le("1. В комнате пропала книга. В ней были три человека: Аня, Боб и Катя. Аня сказала, что она не брала книгу, Боб подтвердил это, а Катя призналась, что взяла ее. Кто вор?");
+        le("комманды: Аня - вы говорите то что её своровала Аня, Боб, Катя");
+
+    }
+
+    </script>
+    
+    <script src="/static/script.js"></script> 
+</body>
+</html>

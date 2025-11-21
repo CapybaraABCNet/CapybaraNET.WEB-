@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>CapybaraNET.WEB</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+}
+header {
+    background: linear-gradient(135deg, #00aeff, #00f2ff);
+    
+    color: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+.logo1 {
+    
+    display: flex;
+    text-align: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 300px;
+    margin-right: 20px;
+}
+.logo1 img {
+    border-radius: 50%;
+    width: 150px;
+    margin-right: 20px;
+}
+.g {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-left: 20px;
+}
+.container1 {
+    min-height: 100%;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            margin: 20px auto; 
+        }
+        .m {
+            color: rgb(255, 255, 255);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: appear 2s forwards;
+            margin-bottom: 20px;
+        }
+        .w {
+            color: rgb(0, 0, 0);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: appear 2s forwards;
+            margin-bottom: 20px;
+        }
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+.g::after {
+  width: 0;
+  transition: 0.3s;
+}
+.g:hover:after {
+  width: 100%;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: white;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+button {
+    background-color: aqua;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.ad-container {
+    width: 300px; 
+    float: right; /* Плавающий элемент вправо */
+    padding: 20px;
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.ad-container1 {
+    width: 300px; 
+    margin-left: 20px;
+    padding: 20px;
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.img {
+            width: 250px; 
+            border-radius: 15px; 
+            opacity: 0;
+            animation: imageFadeIn 2s forwards;
+            display: block; 
+            margin: 20px auto; 
+        }
+
+        @keyframes imageFadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+.container2 {
+    min-height: 100%;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto; 
+    float: right;
+}
+.im {
+    margin-left: 20px;
+     width: 250px; 
+            border-radius: 15px; 
+            opacity: 0;
+            animation: imageFadeIn 2s forwards;
+            display: block; 
+            margin: 20px auto; 
+
+}
+
+.text-center {
+    text-align: center;
+}
+.h1 {
+            color: #000000;
+            margin-bottom: 10px;
+        }
+#console {
+            border: 2px solid #0f0;
+            padding: 15px;
+            min-height: 300px;
+            white-space: pre-wrap;
+            overflow-y: auto;
+        }
+        #input {
+            background: transparent;
+            border: none;
+            color: #0f0;
+            font-family: inherit;
+            font-size: 16px;
+            outline: none;
+            width: 100%;
+        }
+        .prompt {
+            color: #0ff;
+        }
+    #consol {
+            border: 2px solid #0f0;
+            padding: 15px;
+            min-height: 300px;
+            white-space: pre-wrap;
+            overflow-y: auto;
+        }
+        #inpu {
+            background: transparent;
+            border: none;
+            color: #0f0;
+            font-family: inherit;
+            font-size: 16px;
+            outline: none;
+            width: 100%;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+        }
+        .results {
+            margin-top: 20px;
+        }
+        .result-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer; /* Указатель при наведении */
+        }
+        a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: #265301;
+}
+
+a:visited {
+  color: #437a16;
+}
+
+a:focus {
+  border-bottom: 1px solid;
+  background: #bae498;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+  background: #cdfeaa;
+}
+
+a:active {
+  background: #265301;
+  color: #cdfeaa;
+}
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo1">
+                <img src="https://capybaraabcnet.github.io/Tamagochi-Capybara/photo_5228854488398422188_c.jpg" class="logo1">
+                <h1 class="m">CapybaraNET.WEB</h1>
+            </div>
+        </header>  
+
+        <h1 class="w">Статьи про программирования</h1>  
+        <div>
+        <div class="container1">
+            <h2 class="w">Поиск по сайту</h2>
+            <p class="w">все страницы:</p>
+            <p class="w"><li>Главная страница</li></p>
+            <p class="w"><li>Статьи</li></p>
+            <p class="w"><li>Прикольные штуки</li></p>
+            <p class="w"><li>Научные статьи</li></p>
+            <p class="w"><li>Статьи про программирование</li></p>
+            <p class="w"><li>Шутки и анекдоты</li></p>
+            <p class="w"><li>Как пользоваться ботом?</li></p>
+            <p class="w"><li>Обо мне</li></p>
+            <form id="searchForm">
+                <input type="text" id="query" placeholder="Введите ваш запрос" required>
+                <input type="submit" value="Поиск">
+            </form>
+            <div class="results" id="results"></div>
+
+    </div>   
+        <div class="container1">
+            <h2 class="w">▎Введение в HTML: Основы веб-разработки</h2>
+            <p class="w">HTML (HyperText Markup Language) — это стандартный язык разметки, используемый для создания и оформления веб-страниц. Он является основой любого веб-сайта и служит каркасом, на котором строятся все остальные элементы, такие как CSS и JavaScript. В этой статье мы рассмотрим основные понятия HTML, его структуру и ключевые элементы.</p>
+            <img src="https://avatars.mds.yandex.net/i?id=6bd8f39247b422211cca5af6f14ea792e9b54211-9844612-images-thumbs&n=13" class="img">
+            <h2 class="w">▎Что такое HTML?</h2>
+            <p class="w">HTML — это язык разметки, который позволяет структурировать содержимое веб-страницы с помощью различных тегов. Каждый тег определяет, как будет отображаться определённый элемент на странице. Например, заголовки, абзацы, изображения и ссылки имеют свои собственные теги.</p>
+            <h2 class="w">▎Структура HTML-документа</h2>
+            <p class="w">HTML-документ имеет определённую структуру, которая включает в себя следующие основные элементы:</p>
+            <img src="/static/p.png" class="img" style="width: 350">
+            <h2 class="w">▎Заключение</h2>
+            <p class="w">HTML — это основа веб-разработки, которая позволяет создавать структурированные и доступные веб-страницы. Понимание основ HTML является первым шагом для любого начинающего веб-разработчика. С помощью HTML вы можете создавать текстовые документы, добавлять изображения и ссылки, а также структурировать контент так, чтобы он был удобен для восприятия пользователями.
+
+            Изучение HTML открывает двери к более сложным технологиям веб-разработки, таким как CSS для стилизации и JavaScript для добавления интерактивности. Начните экспериментировать с HTML уже сегодня и создайте свою первую веб-страницу!</p>
+        </div>   
+         
+        <div class="container1">
+            <h2 class="w">▎Введение в Python: Основы языка программирования</h2>
+            <p class="w">Python — это высокоуровневый язык программирования, который был создан Гвидо ван Россумом и впервые выпущен в 1991 году. Он стал одним из самых популярных языков программирования благодаря своей простоте, читаемости и широкому спектру применения. В этой статье мы рассмотрим основные характеристики Python, его синтаксис и популярные области применения.</p>
+            <img src="https://avatars.mds.yandex.net/i?id=3873959dc9a5401d06cf852ed53bdf20c6a59b72-5603605-images-thumbs&n=13" class="img">
+            <h2 class="w">▎Почему Python?</h2>
+            <p class="w">Python обладает рядом преимуществ, которые делают его идеальным выбором для начинающих и профессионалов:</p>
+            <p class="w">1. Простота и читаемость: Синтаксис Python интуитивно понятен и близок к естественному языку, что упрощает процесс обучения.
+            2. Широкая экосистема библиотек: Python имеет множество библиотек и фреймворков, которые позволяют быстро разрабатывать приложения (например, NumPy для научных вычислений, Pandas для анализа данных и Django для веб-разработки).
+            3. Кроссплатформенность: Python работает на различных операционных системах, включая Windows, macOS и Linux.
+            4. Сообщество: Большое и активное сообщество разработчиков предоставляет поддержку, ресурсы и библиотеки.</p>
+            <h2 class="w">▎Заключение</h2>
+            <p class="w">Python — это мощный и универсальный язык программирования, который подходит как для новичков, так и для опытных разработчиков. Его простота, читаемость и широкие возможности делают его идеальным выбором для решения самых различных задач. Если вы только начинаете свой путь в программировании или хотите расширить свои навыки, изучение Python станет отличным шагом вперед. Начните экспериментировать с кодом уже сегодня и откройте для себя мир программирования на Python!</p>
+        </div>
+
+        <div class="container1">
+            <h2 class="w">Golang</h2>
+            <img src="https://martiros.gallerycdn.vsassets.io/extensions/martiros/golang-professional-snippets/1.0.20/1659506662813/Microsoft.VisualStudio.Services.Icons.Default" class="img">
+            <p class="w">Golang, или Go, — это язык программирования, разработанный в Google в 2007 году и впервые представленный общественности в 2009 году. Он был создан с целью улучшения производительности разработки программного обеспечения, упрощения работы с многопоточностью и повышения эффективности компиляции.</p>
+            <h3 class="w">▎Происхождение</h3>
+            <p class="w">Создатели Go — Роберт Грисемер, Роб Пайк и Кен Томпсон — стремились создать язык, который сочетал бы в себе простоту и мощь. На тот момент существовало множество языков программирования, но ни один из них не удовлетворял требованиям разработчиков, работающих над масштабируемыми системами. Go был задуман как язык, который будет легко читать и писать, при этом обеспечивая высокую производительность.</p>
+            <h3 class="w">▎Особенности</h3>
+            <p class="w">Одной из ключевых особенностей Go является его система типов. Язык предлагает статическую типизацию, что позволяет ловить ошибки на этапе компиляции, но при этом сохраняет гибкость благодаря интерфейсам. Это делает Go подходящим для создания больших и сложных приложений.
+
+Go также славится своей поддержкой параллелизма. С помощью горутин — легковесных потоков — разработчики могут легко писать многопоточные программы. Это особенно важно для серверных приложений и облачных сервисов, где масштабируемость и эффективность имеют первостепенное значение.</p>
+            <img src="https://camo.githubusercontent.com/fe5ae67ec9e6f733bc4283fa2ef37ca8c6fd21f7f4c4d60e9531291e119a8251/68747470733a2f2f6f70656e7570746865636c6f75642e636f6d2f77702d636f6e74656e742f75706c6f6164732f323032302f30312f476f6c616e672e706e67" class="img">
+            <h3 class="w">▎Применение</h3>
+            <p class="w">Go активно используется в разработке серверного программного обеспечения, облачных приложений и микросервисов. Многие известные компании, такие как Google, Uber и Dropbox, используют Go для создания высоконагруженных систем. Язык также нашел применение в разработке инструментов DevOps и систем мониторинга благодаря своей скорости и простоте развертывания.</p>
+            <h3 class="w">▎Заключение</h3>
+            <p class="w">Go — это язык программирования, который сочетает в себе простоту, производительность и мощные возможности для работы с параллелизмом. Его популярность продолжает расти, и он становится все более востребованным в мире разработки программного обеспечения. Благодаря активному сообществу и поддержке крупных компаний, Go имеет все шансы занять важное место в будущем технологий.</p>
+            <img src="https://i2.wp.com/www.leyeah.com/upload/images/2022/11/16/63747c660b8f9.jpg" class="img">
+        </div>
+        <script src="/static/script.js"></script>
+
+        <script>
+            const data = [
+        { ID: 1, Text: "Главная страница" },
+        { ID: 2, Text: "Статьи" },
+        { ID: 3, Text: "Научные статьи"},
+        { ID: 4, Text: "Статьи про программирования"},
+        { ID: 5, Text: "Шутки и анекдоты"},
+        { ID: 6, Text: "Как пользоваться ботом?"},
+        { ID: 7, Text: "Обо мне"},
+        { ID: 8, Text: "Прикольные штуки"},
+        
+    ];
+
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const query = document.getElementById('query').value.toLowerCase();
+        const results = data.filter(doc => doc.Text.toLowerCase().includes(query));
+
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = ''; 
+
+        if (results.length === 0) {
+            resultsDiv.innerHTML = '<p>Нет результатов.</p>';
+            return;
+        }
+
+        results.forEach(doc => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'result-item';
+            resultItem.textContent = `ID: ${doc.ID}, Текст: ${doc.Text}`;
+            resultItem.onclick = () => {
+                
+                if (doc.ID === 1) {
+                    window.location.href = 'index';
+                } else if (doc.ID === 2) {
+                    window.location.href = 'm'; 
+                } else if (doc.ID === 8) {
+                    window.location.href = 'prikol';
+                }
+                
+                else if (doc.ID === 3) {
+                    window.location.href = "science";
+                }
+                else if (doc.ID === 4) {
+                    window.location.href = "progstat";
+                }
+                else if (doc.ID === 5) {
+                    window.location.href = "shutk";
+                }
+
+                else if (doc.ID === 6) {
+                    window.location.href = "i";
+                }
+                else if (doc.ID === 7) {
+                    window.location.href = "abc";
+                }
+
+
+                else {
+                    window.location.href = `document.html?id=${doc.ID}`; 
+                }
+            };
+            resultsDiv.appendChild(resultItem);
+        });
+    });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+}
+header {
+    background: linear-gradient(135deg, #00aeff, #00f2ff);
+    
+    color: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+.logo1 {
+    
+    display: flex;
+    text-align: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 300px;
+    margin-right: 20px;
+}
+.logo1 img {
+    border-radius: 50%;
+    width: 150px;
+    margin-right: 20px;
+}
+.g {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-left: 20px;
+}
+.container1 {
+    min-height: 100%;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            margin: 20px auto; 
+        }
+        .m {
+            color: rgb(255, 255, 255);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: appear 2s forwards;
+            margin-bottom: 20px;
+        }
+        .w {
+            color: rgb(0, 0, 0);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: appear 2s forwards;
+            margin-bottom: 20px;
+        }
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+.g::after {
+  width: 0;
+  transition: 0.3s;
+}
+.g:hover:after {
+  width: 100%;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: white;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+button {
+    background-color: aqua;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.ad-container {
+    width: 300px; 
+    float: right; /* Плавающий элемент вправо */
+    padding: 20px;
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.ad-container1 {
+    width: 300px; 
+    margin-left: 20px;
+    padding: 20px;
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.img {
+            width: 250px; 
+            border-radius: 15px; 
+            opacity: 0;
+            animation: imageFadeIn 2s forwards;
+            display: block; 
+            margin: 20px auto; 
+        }
+
+        @keyframes imageFadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+.container2 {
+    min-height: 100%;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto; 
+    float: right;
+}
+.im {
+    margin-left: 20px;
+     width: 250px; 
+            border-radius: 15px; 
+            opacity: 0;
+            animation: imageFadeIn 2s forwards;
+            display: block; 
+            margin: 20px auto; 
+
+}
+
+.text-center {
+    text-align: center;
+}
+.h1 {
+            color: #000000;
+            margin-bottom: 10px;
+        }
+#console {
+            border: 2px solid #0f0;
+            padding: 15px;
+            min-height: 300px;
+            white-space: pre-wrap;
+            overflow-y: auto;
+        }
+        #input {
+            background: transparent;
+            border: none;
+            color: #0f0;
+            font-family: inherit;
+            font-size: 16px;
+            outline: none;
+            width: 100%;
+        }
+        .prompt {
+            color: #0ff;
+        }
+    #consol {
+            border: 2px solid #0f0;
+            padding: 15px;
+            min-height: 300px;
+            white-space: pre-wrap;
+            overflow-y: auto;
+        }
+        #inpu {
+            background: transparent;
+            border: none;
+            color: #0f0;
+            font-family: inherit;
+            font-size: 16px;
+            outline: none;
+            width: 100%;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+        }
+        .results {
+            margin-top: 20px;
+        }
+        .result-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer; /* Указатель при наведении */
+        }
+        a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: #265301;
+}
+
+a:visited {
+  color: #437a16;
+}
+
+a:focus {
+  border-bottom: 1px solid;
+  background: #bae498;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+  background: #cdfeaa;
+}
+
+a:active {
+  background: #265301;
+  color: #cdfeaa;
+}
+        </style>
+        <title>CapybaraNET.WEB</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo1">
+                <img src="https://capybaraabcnet.github.io/Tamagochi-Capybara/photo_5228854488398422188_c.jpg" class="logo1"> 
+                <h1 class="m">CapybaraNET.WEB</h1>
+            </div>
+        </header>
+        <h1 class="w">Шутки</h1>
+        <div>
+        <div class="container1">
+            <h2 class="w">Поиск по сайту</h2>
+            <p class="w">все страницы:</p>
+            <p class="w"><li>Главная страница</li></p>
+            <p class="w"><li>Статьи</li></p>
+            <p class="w"><li>Прикольные штуки</li></p>
+            <p class="w"><li>Научные статьи</li></p>
+            <p class="w"><li>Статьи про программирование</li></p>
+            <p class="w"><li>Шутки и анекдоты</li></p>
+            <p class="w"><li>Как пользоваться ботом?</li></p>
+            <p class="w"><li>Обо мне</li></p>
+            <form id="searchForm">
+                <input type="text" id="query" placeholder="Введите ваш запрос" required>
+                <input type="submit" value="Поиск">
+            </form>
+            <div class="results" id="results"></div>
+
+    </div>  
+
+<h2 class="w" id="gif">GIFs</h2>
+
+<div class="container1">
+    <div class="tenor-gif-embed" data-postid="8093115601895853781" data-share-method="host" data-aspect-ratio="1.81752" data-width="100%"><a href="https://tenor.com/view/walter-white-%D0%B2%D0%BE-%D0%B2%D1%81%D0%B5-%D1%82%D1%8F%D0%B6%D0%BA%D0%B8%D0%B5-%D1%83%D0%BE%D0%BB%D1%82%D0%B5%D1%80-%D1%83%D0%B0%D0%B9%D1%82-gif-8093115601895853781">Walter White во все тяжкие Meme</a>from <a href="https://tenor.com/search/walter+white-memes">Walter White Memes</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="22785295" data-share-method="host" data-aspect-ratio="1.77778" data-width="200px">
+            <a href="https://tenor.com/view/walter-white-muslim-gif-22785295">Walter White Muslim GIF</a> from 
+            <a href="https://tenor.com/search/walter+white-gifs">Walter White GIFs</a>
+        </div>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="16169008150220875863" data-share-method="host" data-aspect-ratio="1" data-width="200px">
+        <a href="https://tenor.com/view/spinning-capybara-gif-16169008150220875863">Spinning Capybara Sticker</a> from 
+        <a href="https://tenor.com/search/spinning-stickers">Spinning Stickers</a>
+    </div>
+    <div class="tenor-gif-embed" data-postid="15656021286497190682" data-share-method="host" data-aspect-ratio="0.682731" data-width="100%"><a href="https://tenor.com/view/%D0%BA%D0%B0%D0%BF%D0%B8%D0%B1%D0%B0%D1%80%D0%B0-gif-15656021286497190682">капибара GIF</a>from <a href="https://tenor.com/search/%D0%BA%D0%B0%D0%BF%D0%B8%D0%B1%D0%B0%D1%80%D0%B0-gifs">капибара GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="12878617264170262013" data-share-method="host" data-aspect-ratio="0.73494" data-width="100%"><a href="https://tenor.com/view/jennie-capybara-capybara-capybara-clapping-capybara-sunglasses-jenniebara-gif-12878617264170262013">Jennie Capybara Capybara Clapping GIF</a>from <a href="https://tenor.com/search/jennie+capybara-gifs">Jennie Capybara GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="6506678332809175048" data-share-method="host" data-aspect-ratio="0.844156" data-width="100%"><a href="https://tenor.com/view/capybara-stomach-fat-belly-rub-capybara-belly-gif-6506678332809175048">Capybara Stomach GIF</a>from <a href="https://tenor.com/search/capybara-gifs">Capybara GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="17204071067096567881" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/fun-pets-pets-fun-funny-pets-pets-funny-gif-17204071067096567881">Fun Pets Pets Fun GIF</a>from <a href="https://tenor.com/search/fun+pets-gifs">Fun Pets GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="4594593191114135920" data-share-method="host" data-aspect-ratio="1.24528" data-width="100%"><a href="https://tenor.com/view/dog-cat-gif-4594593191114135920">Dog Cat GIF</a>from <a href="https://tenor.com/search/dog-gifs">Dog GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="5334994179370395420" data-share-method="host" data-aspect-ratio="0.564257" data-width="100%"><a href="https://tenor.com/view/dog-holding-flower-gif-5334994179370395420">Dog Holding Flower GIF</a>from <a href="https://tenor.com/search/dog+holding+flower-gifs">Dog Holding Flower GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="16519600" data-share-method="host" data-aspect-ratio="0.8" data-width="100%"><a href="https://tenor.com/view/dog-catiolo-rose-cute-flower-gif-16519600">Dog Catiolo GIF</a>from <a href="https://tenor.com/search/dog-gifs">Dog GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="3848031856400844792" data-share-method="host" data-aspect-ratio="0.839357" data-width="100%"><a href="https://tenor.com/view/dog-cute-dog-happy-dog-funny-dog-funny-gif-3848031856400844792">Dog Cute Dog GIF</a>from <a href="https://tenor.com/search/dog-gifs">Dog GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="18342081590163558723" data-share-method="host" data-aspect-ratio="0.926316" data-width="100%"><a href="https://tenor.com/view/dancing-dog-cute-dog-gif-18342081590163558723">Dancing Dog GIF</a>from <a href="https://tenor.com/search/dancing-gifs">Dancing GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="16394274762549535394" data-share-method="host" data-aspect-ratio="1.41477" data-width="100%"><a href="https://tenor.com/view/capybara-capybara-cute-gif-16394274762549535394">Capybara Capybara Cute Sticker</a>from <a href="https://tenor.com/search/capybara-stickers">Capybara Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="15315026488481095480" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/capybara-side-eye-gif-15315026488481095480">Capybara Side Eye GIF</a>from <a href="https://tenor.com/search/capybara+side+eye-gifs">Capybara Side Eye GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="9371644960707312849" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/capybara-stare-stare-smh-capybara-side-eye-side-eye-gif-9371644960707312849">Capybara Stare Smh GIF</a>from <a href="https://tenor.com/search/capybara+stare-gifs">Capybara Stare GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="21041188" data-share-method="host" data-aspect-ratio="1.01911" data-width="100%"><a href="https://tenor.com/view/farthyun-capybara-gif-21041188">Farthyun Capybara GIF</a>from <a href="https://tenor.com/search/farthyun-gifs">Farthyun GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="tenor-gif-embed" data-postid="16689914" data-share-method="host" data-aspect-ratio="1.80791" data-width="100%"><a href="https://tenor.com/view/izu-shaboten-animal-park-capybara-hot-springs-hot-tub-soak-gif-16689914">Izu Shaboten Animal Park Capybara GIF</a>from <a href="https://tenor.com/search/izu+shaboten+animal+park-gifs">Izu Shaboten Animal Park GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+</div>
+
+<h3 class="w">Скоро тут будет больше информации</h3>
+
+
+<script>
+    const data = [
+        { ID: 1, Text: "Главная страница" },
+        { ID: 2, Text: "Статьи" },
+        { ID: 3, Text: "Научные статьи"},
+        { ID: 4, Text: "Статьи про программирования"},
+        { ID: 5, Text: "Шутки и анекдоты"},
+        { ID: 6, Text: "Как пользоваться ботом?"},
+        { ID: 7, Text: "Обо мне"},
+        { ID: 8, Text: "Прикольные штуки"},
+        
+    ];
+
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const query = document.getElementById('query').value.toLowerCase();
+        const results = data.filter(doc => doc.Text.toLowerCase().includes(query));
+
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = ''; 
+
+        if (results.length === 0) {
+            resultsDiv.innerHTML = '<p>Нет результатов.</p>';
+            return;
+        }
+
+        results.forEach(doc => {
+            const resultItem = document.createElement('div');
+            resultItem.className = 'result-item';
+            resultItem.textContent = `ID: ${doc.ID}, Текст: ${doc.Text}`;
+            resultItem.onclick = () => {
+                
+                if (doc.ID === 1) {
+                    window.location.href = 'index';
+                } else if (doc.ID === 2) {
+                    window.location.href = 'm'; 
+                }
+                
+                
+                else if (doc.ID === 3) {
+                    window.location.href = "science";
+                }
+                else if (doc.ID === 4) {
+                    window.location.href = "progstat";
+                }
+                else if (doc.ID === 5) {
+                    window.location.href = "shutk";
+                }
+
+                else if (doc.ID === 6) {
+                    window.location.href = "i";
+                }
+                else if (doc.ID === 7) {
+                    window.location.href = "abc";
+                } else if (doc.ID === 8) {
+                    window.location.href = 'prikol';
+                }
+
+
+                else {
+                    window.location.href = `document.html?id=${doc.ID}`; 
+                }
+            };
+            resultsDiv.appendChild(resultItem);
+        });
+    });
+</script>
+    </body>
+</html>
